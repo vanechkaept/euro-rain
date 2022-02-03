@@ -1,0 +1,81 @@
+.animation_block {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  background-color: #0000006b;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loader > span {
+  display: inline-block;
+  position: absolute;
+  top: -100px;
+
+  // background: url("../../../assets/img/euro-money.jpeg") no-repeat;
+  background-size: contain;
+
+  -webkit-animation: loader 10s infinite linear;
+  -moz-animation: loader 10s infinite linear;
+}
+
+.loader > span {
+  @for $i from 1 through 50 {
+    &.a_#{$i} {
+      left: random(100) + vw;
+      $delay: random(100) / 10 + s;
+      -webkit-animation-delay: $delay;
+      -moz-animation-delay: $delay;
+    }
+  }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+
+    -webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+
+    -webkit-transform: translate(100px, 600px) rotateZ(270deg);
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+
+    -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
+
+@-moz-keyframes loader {
+  0% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+
+    -webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+
+    -webkit-transform: translate(100px, 600px) rotateZ(270deg);
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+
+    -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
